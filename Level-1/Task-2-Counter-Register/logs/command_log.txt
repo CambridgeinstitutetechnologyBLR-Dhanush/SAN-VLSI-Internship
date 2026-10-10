@@ -1,0 +1,36 @@
+# SAN VLSI Internship — Task 2 Command Log
+
+## 1. Compile the RTL and testbench
+Command:
+`iverilog -Wall -o simulation.out rtl/counter.v rtl/register.v tb/counter_register_tb.v`
+
+Explanation: Compiles the counter RTL, register RTL, and testbench into the simulation executable `simulation.out`. The `-Wall` option enables additional compiler warnings.
+
+## 2. Run the simulation
+Command:
+`vvp simulation.out`
+
+Explanation: Executes the compiled simulation and prints the monitored signal values, including reset, enable, counter output, and register output.
+
+## 3. Generate waveform data
+Command:
+`$dumpfile("waveform/counter_register.vcd");`
+`$dumpvars(0, counter_register_tb);`
+
+Explanation: These Verilog system tasks in the testbench create a VCD file containing signal transitions for waveform inspection.
+
+## 4. Open the waveform
+Command:
+`gtkwave waveform/counter_register.vcd`
+
+Explanation: Opens the VCD file in GTKWave so the clock, reset, enable, data, counter, and register signals can be inspected.
+
+## Verification observations
+- Reset clears the counter and register to zero.
+- The counter increments on rising clock edges when enabled.
+- The counter holds its value when disabled.
+- The register captures input data on a rising clock edge when enabled.
+- The 4-bit counter wraps from 15 (hexadecimal F) to 0.
+
+## Result
+The counter and register were simulated, and their signal transitions were inspected in GTKWave.
