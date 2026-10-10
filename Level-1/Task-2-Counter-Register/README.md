@@ -3,9 +3,11 @@
 ## RTL & Testbench Practice: Counter and Register
 
 ### Objective
-Design and simulate a synchronous 4-bit counter and a 4-bit register using Verilog. Verify clock, reset, enable, data capture, hold behavior, and counter wraparound using Icarus Verilog and GTKWave.
+
+Design and simulate a 4-bit counter and a 4-bit register using Verilog. Verify clock, reset, enable, data capture, hold behavior, and counter wraparound using Icarus Verilog and GTKWave.
 
 ### Tools Used
+
 - Verilog HDL
 - Icarus Verilog
 - GTKWave
@@ -13,6 +15,7 @@ Design and simulate a synchronous 4-bit counter and a 4-bit register using Veril
 - MSYS2 UCRT64 terminal
 
 ### Project Structure
+
 - `rtl/counter.v` — 4-bit clocked counter
 - `rtl/register.v` — 4-bit register
 - `tb/counter_register_tb.v` — simulation testbench
@@ -30,24 +33,45 @@ Design and simulate a synchronous 4-bit counter and a 4-bit register using Veril
 
 Run these commands from the `Task-2-Counter-Register` directory.
 
-Compile:
-`iverilog -Wall -o simulation.out rtl/counter.v rtl/register.v tb/counter_register_tb.v`
+**Compile:**
+```bash
+iverilog -Wall -o simulation.out rtl/counter.v rtl/register.v tb/counter_register_tb.v
+```
 
-Run:
-`vvp simulation.out`
+**Run:**
+```bash
+vvp simulation.out
+```
 
-Open waveform:
-`gtkwave waveform/counter_register.vcd`
+**Open waveform:**
+```bash
+gtkwave waveform/counter_register.vcd
+```
+
+### Expected Simulation Output
+
+- Reset clears the counter and register outputs to `0`.
+- The counter increments when enable is high.
+- The counter holds its value when enable is low.
+- The register captures input data when enabled and holds its value when disabled.
+- The counter reaches `15` (hexadecimal `F`) and wraps around to `0`.
+- The simulation terminates automatically using `$finish`.
+
+*Note: Exact output values and timestamps depend on the testbench sequence.*
 
 ### Verification
+
 - Reset behavior checked.
 - Counter increment and hold behavior checked.
 - Register data capture and hold behavior checked.
 - Natural 4-bit counter wraparound checked.
 - Signal transitions inspected using GTKWave.
+- Automatic simulation termination verified.
 
 ### Result
-The counter and register were simulated, and their behavior was inspected through the simulation output and waveform viewer.
+
+The counter and register were simulated using Icarus Verilog, and their behavior was inspected through simulation output and waveform analysis.
 
 ### Evidence
+
 See `waveform/counter_register_waveform.png` for the waveform screenshot and `logs/command_log.txt` for the simulation command explanations.

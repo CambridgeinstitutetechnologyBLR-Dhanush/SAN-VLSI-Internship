@@ -77,10 +77,11 @@ module counter_register_tb;
             $display("Counter boundary test: count = %0d", count);
         end
 
-@(posedge clk);
-#1;
-$display("Counter wraparound test: count = %0d", count);
-    end
+        @(posedge clk);
+        #1;
+        $display("Counter wraparound test: count = %0d", count);
+        $finish;
+        end
 
     initial begin
         $monitor(
