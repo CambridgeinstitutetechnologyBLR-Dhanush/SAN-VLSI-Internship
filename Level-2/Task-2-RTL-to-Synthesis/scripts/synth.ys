@@ -1,0 +1,9 @@
+read_verilog Level-2/Task-2-RTL-to-Synthesis/rtl/alu.v
+hierarchy -check -top alu
+proc
+opt
+check
+synth -top alu
+stat
+write_verilog Level-2/Task-2-RTL-to-Synthesis/netlist/alu_synth.v
+tee -o Level-2/Task-2-RTL-to-Synthesis/reports/synthesis_stat.txt stat
