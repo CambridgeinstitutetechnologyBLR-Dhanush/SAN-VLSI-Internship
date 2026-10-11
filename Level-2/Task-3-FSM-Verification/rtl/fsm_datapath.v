@@ -1,3 +1,4 @@
+
 `timescale 1ns/1ps
 
 module fsm_datapath (
@@ -7,13 +8,13 @@ module fsm_datapath (
     input [3:0] data_in,
     output reg [3:0] data_out,
     output reg done,
-    output reg [1:0] state
+    output reg [2:0] state
 );
 
-localparam IDLE    = 2'b00;
-localparam LOAD    = 2'b01;
-localparam PROCESS = 2'b10;
-localparam DONE    = 2'b11;
+localparam IDLE    = 3'b000;
+localparam LOAD    = 3'b001;
+localparam PROCESS = 3'b010;
+localparam DONE    = 3'b011;
 
 always @(posedge clk or posedge rst) begin
     if (rst) begin

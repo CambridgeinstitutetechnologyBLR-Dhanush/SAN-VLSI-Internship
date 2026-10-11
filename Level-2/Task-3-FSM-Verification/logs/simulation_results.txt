@@ -1,4 +1,10 @@
 VCD info: dumpfile Level-2/Task-3-FSM-Verification/waveform/fsm_datapath.vcd opened for output.
-PASS: Reset, LOAD, PROCESS and DONE tests
-PASS: Invalid-state recovery test
-Level-2/Task-3-FSM-Verification/tb/fsm_datapath_tb.v:82: $finish called at 91000 (1ps)
+PASS: Reset test
+PASS: IDLE to LOAD transition
+PASS: LOAD state and data capture
+PASS: PROCESS state and data increment
+PASS: DONE state and done signal
+PASS: Invalid-state recovery
+Tests passed: 6/6
+ALL FSM TESTS PASSED
+Level-2/Task-3-FSM-Verification/tb/fsm_datapath_tb.v:106: $finish called at 66000 (1ps)
