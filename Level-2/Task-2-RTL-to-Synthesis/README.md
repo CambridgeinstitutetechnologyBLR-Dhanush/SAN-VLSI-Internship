@@ -62,3 +62,29 @@ These counts describe the generic synthesized logic representation. They do not 
 
 ## Conclusion
 The 4-bit ALU was successfully synthesized using Yosys. The inferred logic cells were inspected, and the synthesized netlist, statistics report, and execution log were generated for reproducibility.
+
+## Functional Verification
+
+The 4-bit ALU was verified using an Icarus Verilog testbench.
+
+The testbench checks:
+- Addition: 3 + 2 = 5
+- Addition overflow: 15 + 1 wraps to 0
+- Subtraction: 7 - 3 = 4
+- Subtraction underflow: 2 - 5 wraps to 13
+- Bitwise AND: 1100 & 1010 = 1000
+- Bitwise XOR: 1100 ^ 1010 = 0110
+
+**Result:** All 6 functional tests passed.
+
+### Testbench and Waveform
+- Testbench: `tb/alu_tb.v`
+- Waveform: `waveform/alu_tb.vcd`
+- Simulation results: `logs/alu_test_results.txt`
+
+### Functional Verification Commands
+
+```bash
+iverilog -Wall -g2012 -s alu_tb -o simulation.out Level-2/Task-2-RTL-to-Synthesis/rtl/alu.v Level-2/Task-2-RTL-to-Synthesis/tb/alu_tb.v
+vvp simulation.out
+```

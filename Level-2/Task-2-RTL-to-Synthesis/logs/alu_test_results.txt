@@ -1,0 +1,11 @@
+VCD info: dumpfile Level-2/Task-2-RTL-to-Synthesis/waveform/alu_tb.vcd opened for output.
+PASS: Addition
+PASS: ddition overflow
+PASS: Subtraction
+PASS: action underflow
+PASS: Bitwise AND
+PASS: Bitwise XOR
+--------------------------------
+Tests passed: 6/6
+ALL ALU TESTS PASSED
+Level-2/Task-2-RTL-to-Synthesis/tb/alu_tb.v:69: $finish called at 6000 (1ps)
