@@ -1,0 +1,8 @@
+VCD info: dumpfile Level-2/Task-1-Parameterized-Counter/waveform/parameterized_counter.vcd opened for output.
+PASS: Reset test
+PASS: WIDTH=4 and WIDTH=8 first increment
+PASS: WIDTH=4 and WIDTH=8 counting
+PASS: Enable hold test
+PASS: Reset after counting
+ALL TESTS PASSED
+Level-2/Task-1-Parameterized-Counter/tb/parameterized_counter_tb.v:98: $finish called at 131000 (1ps)
