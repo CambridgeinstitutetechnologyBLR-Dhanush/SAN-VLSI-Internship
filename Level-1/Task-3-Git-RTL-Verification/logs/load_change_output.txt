@@ -1,0 +1,17 @@
+VCD info: dumpfile waveform/counter.vcd opened for output.
+time=0 rst=1 clear=0 load=0 load_data=0 en=0 count=0
+time=2000 rst=0 clear=0 load=0 load_data=0 en=1 count=0
+time=5000 rst=0 clear=0 load=0 load_data=0 en=1 count=1
+time=15000 rst=0 clear=0 load=0 load_data=0 en=1 count=2
+time=25000 rst=0 clear=0 load=0 load_data=0 en=1 count=3
+time=35000 rst=0 clear=0 load=0 load_data=0 en=1 count=4
+time=40000 rst=0 clear=0 load=0 load_data=0 en=0 count=4
+time=60000 rst=0 clear=1 load=0 load_data=0 en=1 count=4
+time=65000 rst=0 clear=1 load=0 load_data=0 en=1 count=0
+time=70000 rst=0 clear=0 load=1 load_data=10 en=1 count=0
+time=75000 rst=0 clear=0 load=1 load_data=10 en=1 count=10
+time=80000 rst=0 clear=0 load=0 load_data=10 en=1 count=10
+time=85000 rst=0 clear=0 load=0 load_data=10 en=1 count=11
+time=95000 rst=0 clear=0 load=0 load_data=10 en=1 count=12
+time=105000 rst=0 clear=0 load=0 load_data=10 en=1 count=13
+tb/counter_tb.v:62: $finish called at 111000 (1ps)
