@@ -1,0 +1,45 @@
+
+name: RTL Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    name: Compile and Test RTL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Verify Parameterized Counter
+        run: |
+          mkdir -p build
+          iverilog -g2012 -o build/counter_test \
+            Level-2/Task-1-Parameterized-Counter/rtl/parameterized_counter.v \
+            Level-2/Task-1-Parameterized-Counter/tb/parameterized_counter_tb.v
+          vvp build/counter_test
+
+      - name: Verify ALU
+        run: |
+          iverilog -g2012 -o build/alu_test \
+            Level-2/Task-2-RTL-to-Synthesis/rtl/alu.v \
+            Level-2/Task-2-RTL-to-Synthesis/tb/alu_tb.v
+          vvp build/alu_test
+
+      - name: Verify FSM and Datapath
+        run: |
+          iverilog -g2012 -o build/fsm_test \
+            Level-2/Task-3-FSM-Verification/rtl/fsm_datapath.v \
+            Level-2/Task-3-FSM-Verification/tb/fsm_datapath_tb.v
+          vvp build/fsm_test
