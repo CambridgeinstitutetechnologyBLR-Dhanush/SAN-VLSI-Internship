@@ -1,0 +1,195 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO full_adder
+  CLASS BLOCK ;
+  FOREIGN full_adder ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 200.000 BY 200.000 ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 163.240 4.000 163.840 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.159000 ;
+    PORT
+      LAYER met2 ;
+        RECT 0.090 0.000 0.370 4.000 ;
+    END
+  END B
+  PIN Cin
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    ANTENNAGATEAREA 0.213000 ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 115.640 200.000 116.240 ;
+    END
+  END Cin
+  PIN Cout
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 119.230 196.000 119.510 200.000 ;
+    END
+  END Cout
+  PIN Sum
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    ANTENNADIFFAREA 0.795200 ;
+    PORT
+      LAYER met2 ;
+        RECT 154.650 0.000 154.930 4.000 ;
+    END
+  END Sum
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 24.340 10.640 25.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 49.340 10.640 50.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 74.340 10.640 75.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 99.340 10.640 100.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 124.340 10.640 125.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 149.340 10.640 150.940 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 174.340 10.640 175.940 187.920 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 30.030 194.360 31.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 55.030 194.360 56.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 80.030 194.360 81.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 105.030 194.360 106.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 130.030 194.360 131.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 155.030 194.360 156.630 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 180.030 194.360 181.630 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 21.040 10.640 22.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 46.040 10.640 47.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 71.040 10.640 72.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 96.040 10.640 97.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 121.040 10.640 122.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 146.040 10.640 147.640 187.920 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 171.040 10.640 172.640 187.920 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 26.730 194.360 28.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 51.730 194.360 53.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 76.730 194.360 78.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 101.730 194.360 103.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 126.730 194.360 128.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 151.730 194.360 153.330 ;
+    END
+    PORT
+      LAYER met5 ;
+        RECT 5.280 176.730 194.360 178.330 ;
+    END
+  END VPWR
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 194.120 187.765 ;
+      LAYER met1 ;
+        RECT 0.070 10.640 194.510 187.920 ;
+      LAYER met2 ;
+        RECT 0.100 195.720 118.950 196.000 ;
+        RECT 119.790 195.720 194.490 196.000 ;
+        RECT 0.100 4.280 194.490 195.720 ;
+        RECT 0.650 4.000 154.370 4.280 ;
+        RECT 155.210 4.000 194.490 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 164.240 196.000 187.845 ;
+        RECT 4.400 162.840 196.000 164.240 ;
+        RECT 4.000 116.640 196.000 162.840 ;
+        RECT 4.000 115.240 195.600 116.640 ;
+        RECT 4.000 10.715 196.000 115.240 ;
+  END
+END full_adder
+END LIBRARY
+
