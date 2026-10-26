@@ -12,7 +12,7 @@
 - [x] One improvement proposed.
 - [ ] Confirm power metric units and estimation methodology.
 - [ ] Review the report against the original files before submission.
-- [ ] Capture a screenshot of the timing summary or layout/report for evidence.
+- [x] Add the available timing-report screenshot to the Task 3 evidence folder.
 
 ## Sign-off note
 Do not claim validated power numbers until the units and estimation
