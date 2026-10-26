@@ -117,3 +117,41 @@ The maximum timing report gives a data arrival time of approximately 2.92 ns for
 The reported worst setup slack is 4.83 ns and worst hold slack is 4.20 ns under the virtual-clock constraints. These slack values must not be interpreted as proof of a real operating frequency because the design has no functional clock input and the constraints are generic.
 
 The virtual-clock run is the more appropriate of the two runs for inspecting combinational input-to-output paths. Use the archived reports and SDC when presenting timing results, and clearly state the assumptions.
+## Final OpenLane Run — 26 October 2026
+
+The final run used OpenLane v1.0.2 with SKY130A and the
+`sky130_fd_sc_hd` standard-cell library. The run ID was
+`RUN_2026.10.26_16.30.50`.
+
+### Archived artifacts
+
+- GDSII: `fresh-run-2026-10-26-final/results/full_adder.gds`
+- DEF: `fresh-run-2026-10-26-final/results/full_adder.def`
+- LEF: `fresh-run-2026-10-26-final/results/full_adder.lef`
+- Timing summary: `fresh-run-2026-10-26-final/reports/31-rcx_sta.summary.rpt`
+- LVS report: `fresh-run-2026-10-26-final/reports/39-full_adder.lvs.rpt`
+- DRC report: `fresh-run-2026-10-26-final/reports/drc.rpt`
+- Metrics: `fresh-run-2026-10-26-final/reports/metrics.csv`
+
+### Verification results
+
+- GDSII output generated successfully.
+- LVS: zero net, device, pin, or property mismatches.
+- DRC: zero reported violations.
+- ERC/CVC: zero reported electrical errors, including zero model errors.
+- Worst setup slack: 4.83 ns.
+- Worst hold slack: 4.20 ns.
+- TNS and WNS: 0.00 under the configured timing constraints.
+
+### Timing and signoff caveats
+
+The full adder is combinational and has no functional clock input.
+The timing results use OpenLane's virtual-clock constraints and should
+not be presented as a guaranteed maximum operating frequency.
+
+The run also reported a warning concerning `VSRC_LOC_FILES`; therefore,
+IR-drop analysis accuracy may be limited. The zero-error CVC result
+refers to the electrical checks reported by that run.
+
+These artifacts and reports document the final run separately from
+the earlier archived runs.
