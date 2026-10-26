@@ -94,3 +94,26 @@ A proper timing setup is required for meaningful timing conclusions.
 
 The fresh-run artifacts are stored separately from the previously
 archived results. The original archived-run data remains unchanged.
+
+## Fresh OpenLane Run — Virtual Clock (26 October 2026)
+
+A second successful OpenLane run was completed using `RUN_2026.10.26_15.21.19`. Unlike the earlier run that assigned input `A` as a clock, this run uses OpenLane's virtual clock because the full adder is a combinational circuit with no dedicated clock input.
+
+### Implementation and verification
+
+- **Flow status:** Completed all 42 steps.
+- **Technology:** SKY130A, `sky130_fd_sc_hd`.
+- **Layout outputs:** GDS, LEF, and DEF archived in `fresh-run-2026-10-26-virtual-clock/results/`.
+- **Physical verification:** The run reports no detailed-routing violations and no Magic DRC violations.
+- **LVS and geometry checks:** Review the archived signoff reports for the exact results.
+- **Timing reports:** Maximum, minimum, summary, and checks reports are archived in `fresh-run-2026-10-26-virtual-clock/reports/`.
+
+### Timing interpretation and limitations
+
+The final SDC uses a 10 ns virtual-clock period, 2 ns input delays, 2 ns output delays, and 0.25 ns clock uncertainty. These are flow constraints, not a real clock specification for this combinational full adder.
+
+The maximum timing report gives a data arrival time of approximately 2.92 ns for the reported `B`-to-`Sum` path and 2.74 ns for the reported `B`-to-`Cout` path. Subtracting the configured 2 ns external input delay gives approximate internal path-delay estimates of **0.92 ns (`B` → `Sum`)** and **0.74 ns (`B` → `Cout`)**, under this run's cell, routing, input-transition, and output-load assumptions.
+
+The reported worst setup slack is 4.83 ns and worst hold slack is 4.20 ns under the virtual-clock constraints. These slack values must not be interpreted as proof of a real operating frequency because the design has no functional clock input and the constraints are generic.
+
+The virtual-clock run is the more appropriate of the two runs for inspecting combinational input-to-output paths. Use the archived reports and SDC when presenting timing results, and clearly state the assumptions.
