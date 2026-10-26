@@ -65,3 +65,32 @@ the required OpenLane dependencies and SKY130 PDK installed.
 
 The archived results demonstrate a successful prior run; they do not by
 themselves prove that this repository configuration has been rerun.
+
+## Fresh OpenLane Run — 2026-10-26
+
+A fresh RTL-to-GDSII run was executed using OpenLane v1.0.2,
+SKY130A, and the sky130_fd_sc_hd standard-cell library.
+
+- Design: 1-bit combinational full adder
+- RTL source: `rtl/full_adder.v`
+- Flow status: Completed successfully (42 steps)
+- Final GDSII: `fresh-run-2026-10-26/results/full_adder.gds`
+- Final LEF: `fresh-run-2026-10-26/results/full_adder.lef`
+- Final DEF: `fresh-run-2026-10-26/results/full_adder.def`
+- Metrics: `fresh-run-2026-10-26/reports/metrics.csv`
+- Manufacturability report: `fresh-run-2026-10-26/reports/manufacturability.rpt`
+- Detailed routing: No DRC violations reported
+- GDS signoff: No DRC violations reported
+- Magic/KLayout comparison: No XOR differences reported
+- Typical-corner STA: No setup or hold violations reported
+
+### Timing limitation
+
+The design has no clock input. The run temporarily used
+`CLOCK_PORT=A` to work around an OpenLane timing-script requirement.
+Since A is a data input, timing results from this configuration
+must not be interpreted as valid full-adder timing measurements.
+A proper timing setup is required for meaningful timing conclusions.
+
+The fresh-run artifacts are stored separately from the previously
+archived results. The original archived-run data remains unchanged.
